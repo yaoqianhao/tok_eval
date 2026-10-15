@@ -1,0 +1,8 @@
+# corpus: programming_languages / rust
+# format: one UTF-8 sample per line, '#' = comment
+
+fn main() { println!("Hello, world!"); }
+let squares: Vec<i32> = (1..=10).map(|x| x * x).collect();
+pub fn parse_config(path: &Path) -> Result<Config, Box<dyn Error>> { Ok(Config::default()) }
+match value { Some(v) if v > 0 => handle(v), _ => () }
+（内容由AI生成，仅供参考）

@@ -1,0 +1,8 @@
+# corpus: scientific_formulas / algebra
+# format: one UTF-8 sample per line, '#' = comment
+
+Solve for x: 3x^2 - 12x + 7 = 0, discriminant \Delta = b^2 - 4ac = 144 - 84 = 60.
+The eigenvalues of A satisfy det(A - \lambda I) = 0.
+(a + b)^2 = a^2 + 2ab + b^2 \Rightarrow a^2 + b^2 = (a+b)^2 - 2ab
+A group homomorphism \phi: G \to H preserves the identity: \phi(e_G) = e_H.
+（内容由AI生成，仅供参考）

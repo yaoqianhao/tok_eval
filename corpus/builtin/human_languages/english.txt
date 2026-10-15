@@ -1,0 +1,8 @@
+# corpus: human_languages / english
+# format: one UTF-8 sample per line, '#' = comment
+
+The quick brown fox jumps over the lazy dog near the riverbank.
+Machine translation systems still struggle with idiomatic expressions.
+She sold seashells by the seashore on a sunny summer afternoon.
+Tokenization quality directly affects downstream model performance.
+（内容由AI生成，仅供参考）

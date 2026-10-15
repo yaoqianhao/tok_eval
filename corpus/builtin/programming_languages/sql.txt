@@ -1,0 +1,8 @@
+# corpus: programming_languages / sql
+# format: one UTF-8 sample per line, '#' = comment
+
+SELECT user_id, COUNT(*) AS orders FROM orders WHERE created_at >= '2024-01-01' GROUP BY user_id ORDER BY orders DESC LIMIT 10;
+WITH ranked AS (SELECT *, ROW_NUMBER() OVER (PARTITION BY dept ORDER BY salary DESC) AS rn FROM employees) SELECT * FROM ranked WHERE rn = 1;
+INSERT INTO logs (level, message, created_at) VALUES ('ERROR', 'timeout', NOW());
+UPDATE inventory SET qty = qty - 1 WHERE sku = 'A-1001' AND qty > 0;
+（内容由AI生成，仅供参考）

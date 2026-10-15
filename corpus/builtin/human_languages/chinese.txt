@@ -1,0 +1,8 @@
+# corpus: human_languages / chinese
+# format: one UTF-8 sample per line, '#' = comment
+
+今天天气很好，我们一起去公园散步吧。
+大型语言模型的性能在很大程度上取决于分词器的质量。
+北京是中国的首都，拥有三千多年的建城历史。
+他花了整整一个下午研究这个算法的时间复杂度。
+（内容由AI生成，仅供参考）

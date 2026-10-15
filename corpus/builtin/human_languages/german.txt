@@ -1,0 +1,8 @@
+# corpus: human_languages / german
+# format: one UTF-8 sample per line, '#' = comment
+
+Der schnelle braune Fuchs springt über den faulen Hund.
+Die Qualität der Tokenisierung beeinflusst die Leistung des Sprachmodells erheblich.
+Wir treffen uns morgen um zehn Uhr vor dem Hauptbahnhof.
+Donaudampfschifffahrtsgesellschaft ist ein bekanntes langes deutsches Wort.
+（内容由AI生成，仅供参考）

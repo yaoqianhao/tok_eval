@@ -1,0 +1,8 @@
+# corpus: scientific_formulas / physics
+# format: one UTF-8 sample per line, '#' = comment
+
+E = mc^2, where m is the relativistic mass and c = 3 \times 10^8 m/s.
+F = G\frac{m_1 m_2}{r^2}
+\hat{H}\psi = E\psi
+v_{rms} = \sqrt{\frac{3k_B T}{m}}
+（内容由AI生成，仅供参考）

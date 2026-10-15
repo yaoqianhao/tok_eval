@@ -1,0 +1,8 @@
+# corpus: scientific_formulas / calculus
+# format: one UTF-8 sample per line, '#' = comment
+
+\int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
+\frac{d}{dx}\left[\sin(x)\cos(x)\right] = \cos(2x)
+\lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^n = e
+\nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_0}
+（内容由AI生成，仅供参考）

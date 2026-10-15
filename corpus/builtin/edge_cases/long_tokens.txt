@@ -1,0 +1,8 @@
+# corpus: edge_cases / long_tokens
+# format: one UTF-8 sample per line, '#' = comment
+
+supercalifragilisticexpialidociouspneumonoultramicroscopicsilicovolcanoconiosis
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+https://example.com/very/long/path?query=abcdefghijklmnopqrstuvwxyz0123456789&lang=en
+12345678901234567890123456789012345678901234567890
+（内容由AI生成，仅供参考）

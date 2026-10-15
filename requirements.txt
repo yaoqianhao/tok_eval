@@ -1,0 +1,17 @@
+# Tokenizer Bench - runtime requirements
+# install:  pip install -r requirements.txt
+fastapi>=0.110
+uvicorn>=0.27
+python-multipart>=0.0.9
+transformers>=4.40
+tokenizers>=0.19
+numpy>=1.24
+pandas>=2.0
+
+# --- optional, only needed for SentencePiece (*.model) uploads -------------
+# If these cannot be installed (offline / no wheel), the app still works for
+# tokenizer.json / BPE(vocab.json+merges.txt) / full HF folder uploads and will
+# return a clear error message for .model files.
+sentencepiece>=0.1.99
+protobuf>=3.20
+# （内容由AI生成，仅供参考）

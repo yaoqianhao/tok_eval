@@ -1,0 +1,194 @@
+{
+  "generated_at": "2026-10-15T19:16:49",
+  "corpus_root": "D:\\tok_eval\\corpus",
+  "builtin_root": "D:\\tok_eval\\corpus\\builtin",
+  "custom_root": "D:\\tok_eval\\corpus\\custom",
+  "format": {
+    "txt": "UTF-8, one sample per line, blank lines ignored, '#' starts a comment",
+    "jsonl": "one JSON object per line, sample read from the \"text\" field",
+    "csv": "a \"text\" column, one sample per row"
+  },
+  "layout": "corpus/builtin/<category>/<subcategory>.txt ; corpus/custom/<category>/<subcategory>.<ext>",
+  "categories": {
+    "human_languages": [
+      "english",
+      "hindi",
+      "chinese",
+      "arabic",
+      "japanese",
+      "german",
+      "russian",
+      "korean"
+    ],
+    "programming_languages": [
+      "python",
+      "javascript",
+      "sql",
+      "rust"
+    ],
+    "scientific_formulas": [
+      "algebra",
+      "calculus",
+      "physics",
+      "statistics"
+    ],
+    "edge_cases": [
+      "whitespace_control",
+      "long_tokens",
+      "mixed_scripts"
+    ]
+  },
+  "category_labels": {
+    "human_languages": "Human Languages",
+    "programming_languages": "Programming Languages",
+    "scientific_formulas": "Scientific Formulas",
+    "edge_cases": "Edge Cases",
+    "custom": "Custom Corpus"
+  },
+  "files": [
+    {
+      "category": "edge_cases",
+      "subcategory": "long_tokens",
+      "path": "corpus/builtin/edge_cases/long_tokens.txt",
+      "sample_count": 5,
+      "source": "builtin"
+    },
+    {
+      "category": "edge_cases",
+      "subcategory": "mixed_scripts",
+      "path": "corpus/builtin/edge_cases/mixed_scripts.txt",
+      "sample_count": 5,
+      "source": "builtin"
+    },
+    {
+      "category": "edge_cases",
+      "subcategory": "whitespace_control",
+      "path": "corpus/builtin/edge_cases/whitespace_control.txt",
+      "sample_count": 5,
+      "source": "builtin"
+    },
+    {
+      "category": "human_languages",
+      "subcategory": "arabic",
+      "path": "corpus/builtin/human_languages/arabic.txt",
+      "sample_count": 5,
+      "source": "builtin"
+    },
+    {
+      "category": "human_languages",
+      "subcategory": "chinese",
+      "path": "corpus/builtin/human_languages/chinese.txt",
+      "sample_count": 5,
+      "source": "builtin"
+    },
+    {
+      "category": "human_languages",
+      "subcategory": "english",
+      "path": "corpus/builtin/human_languages/english.txt",
+      "sample_count": 5,
+      "source": "builtin"
+    },
+    {
+      "category": "human_languages",
+      "subcategory": "german",
+      "path": "corpus/builtin/human_languages/german.txt",
+      "sample_count": 5,
+      "source": "builtin"
+    },
+    {
+      "category": "human_languages",
+      "subcategory": "hindi",
+      "path": "corpus/builtin/human_languages/hindi.txt",
+      "sample_count": 5,
+      "source": "builtin"
+    },
+    {
+      "category": "human_languages",
+      "subcategory": "japanese",
+      "path": "corpus/builtin/human_languages/japanese.txt",
+      "sample_count": 5,
+      "source": "builtin"
+    },
+    {
+      "category": "human_languages",
+      "subcategory": "korean",
+      "path": "corpus/builtin/human_languages/korean.txt",
+      "sample_count": 5,
+      "source": "builtin"
+    },
+    {
+      "category": "human_languages",
+      "subcategory": "russian",
+      "path": "corpus/builtin/human_languages/russian.txt",
+      "sample_count": 5,
+      "source": "builtin"
+    },
+    {
+      "category": "programming_languages",
+      "subcategory": "javascript",
+      "path": "corpus/builtin/programming_languages/javascript.txt",
+      "sample_count": 5,
+      "source": "builtin"
+    },
+    {
+      "category": "programming_languages",
+      "subcategory": "python",
+      "path": "corpus/builtin/programming_languages/python.txt",
+      "sample_count": 5,
+      "source": "builtin"
+    },
+    {
+      "category": "programming_languages",
+      "subcategory": "rust",
+      "path": "corpus/builtin/programming_languages/rust.txt",
+      "sample_count": 5,
+      "source": "builtin"
+    },
+    {
+      "category": "programming_languages",
+      "subcategory": "sql",
+      "path": "corpus/builtin/programming_languages/sql.txt",
+      "sample_count": 5,
+      "source": "builtin"
+    },
+    {
+      "category": "scientific_formulas",
+      "subcategory": "algebra",
+      "path": "corpus/builtin/scientific_formulas/algebra.txt",
+      "sample_count": 5,
+      "source": "builtin"
+    },
+    {
+      "category": "scientific_formulas",
+      "subcategory": "calculus",
+      "path": "corpus/builtin/scientific_formulas/calculus.txt",
+      "sample_count": 5,
+      "source": "builtin"
+    },
+    {
+      "category": "scientific_formulas",
+      "subcategory": "physics",
+      "path": "corpus/builtin/scientific_formulas/physics.txt",
+      "sample_count": 5,
+      "source": "builtin"
+    },
+    {
+      "category": "scientific_formulas",
+      "subcategory": "statistics",
+      "path": "corpus/builtin/scientific_formulas/statistics.txt",
+      "sample_count": 5,
+      "source": "builtin"
+    },
+    {
+      "category": "custom",
+      "subcategory": "demo",
+      "path": "corpus/custom/custom/demo.txt",
+      "sample_count": 2,
+      "source": "custom"
+    }
+  ],
+  "builtin_files": 19,
+  "custom_files": 1,
+  "builtin_samples": 95,
+  "custom_samples": 2
+}

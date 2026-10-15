@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>tok_eval · HuggingFace Fast Tokenizer 评测</title>
+<meta name="application-name" content="tok_eval" />
+<meta name="theme-color" content="#0ea5e9" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" href="/static/favicon.png" />
+<link rel="apple-touch-icon" href="/static/favicon.png" />
+<link rel="stylesheet" href="/static/style.css" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <img class="logo" src="/static/favicon.png" alt="tok_eval" width="40" height="40" />
+    <div>
+      <h1>tok_eval</h1>
+      <p class="sub">HuggingFace <b>fast</b> tokenizer 多维度评测 · Playground / Evaluate / Compare</p>
+    </div>
+  </div>
+  <div class="status" id="health">连接中…</div>
+</header>
+
+<main>
+  <!-- ================= upload ================= -->
+  <section class="card">
+    <div class="card-head">
+      <h2>1. 上传 Tokenizer</h2>
+      <span class="hint">强制 <code>use_fast=True</code>，非 fast 会被拒绝</span>
+    </div>
+    <div class="upload-grid">
+      <div class="drop">
+        <label class="file-btn">
+          选择文件（可多选）
+          <input type="file" id="fileInput" multiple />
+        </label>
+        <label class="file-btn">
+          选择整个 HF 文件夹
+          <input type="file" id="dirInput" webkitdirectory directory multiple />
+        </label>
+        <input type="text" id="labelInput" placeholder="标签（可选，如 gpt2-fast）" />
+        <button id="uploadBtn" class="primary">上传并加载</button>
+      </div>
+      <div class="file-list">
+        <p class="muted" id="pickedFiles">未选择文件</p>
+        <p class="muted small">
+          支持：<code>tokenizer.json</code> · 完整 HF fast 目录 · <code>vocab.json + merges.txt</code> ·
+          SentencePiece <code>*.model</code>
+        </p>
+      </div>
+    </div>
+    <div id="uploadResult" class="result-box hidden"></div>
+  </section>
+
+  <!-- ================= tabs ================= -->
+  <nav class="tabs">
+    <button class="tab active" data-tab="playground">Playground</button>
+    <button class="tab" data-tab="evaluate">Evaluate</button>
+    <button class="tab" data-tab="compare">Compare</button>
+  </nav>
+
+  <!-- ================= playground ================= -->
+  <section class="panel active" id="panel-playground">
+    <div class="card">
+      <div class="card-head">
+        <h2>2. Playground</h2>
+        <span class="hint">实时分词 + encode→decode 保真校验</span>
+      </div>
+      <div class="row">
+        <select id="pgSession" class="grow"></select>
+        <label class="check"><input type="checkbox" id="pgSpecial" /> 保留 special tokens</label>
+        <button id="pgRun" class="primary">Tokenize</button>
+      </div>
+      <textarea id="pgText" rows="5" placeholder="粘贴任意文本，例如：今天天气很好，我们一起测试 tokenizer 的分词效果。">今天天气很好，我们一起去测试 tokenizer 的分词效果。
+
+The quick brown fox jumps over the lazy dog.</textarea>
+      <div class="samples">
+        <span>示例：</span>
+        <button class="chip" data-sample="中文">中文</button>
+        <button class="chip" data-sample="english">English</button>
+        <button class="chip" data-sample="code">Code</button>
+        <button class="chip" data-sample="math">Math</button>
+        <button class="chip" data-sample="mixed">Mixed</button>
+        <button class="chip" data-sample="emoji">Emoji</button>
+      </div>
+      <div id="pgCards" class="metric-cards"></div>
+      <div id="pgFidelity" class="result-box hidden"></div>
+      <div class="table-wrap"><table id="pgTable"><thead></thead><tbody></tbody></table></div>
+    </div>
+  </section>
+
+  <!-- ================= evaluate ================= -->
+  <section class="panel" id="panel-evaluate">
+    <div class="card">
+      <div class="card-head">
+        <h2>2. Evaluate</h2>
+        <span class="hint">单个 tokenizer 在全部内置语料类别上全量评测</span>
+      </div>
+      <div class="row">
+        <select id="evSession" class="grow"></select>
+        <button id="evRun" class="primary">运行全量评测</button>
+        <button id="evCsv" class="ghost" disabled>导出 CSV</button>
+        <button id="evJson" class="ghost" disabled>导出 JSON</button>
+      </div>
+      <div id="evCategories" class="cat-grid"></div>
+      <label class="check"><input type="checkbox" id="evCustom" checked /> 包含自定义语料（corpus/custom）</label>
+      <div id="evCards" class="metric-cards"></div>
+      <div id="evStatus" class="result-box hidden"></div>
+      <div class="table-wrap">
+        <table id="evTable">
+          <thead>
+            <tr>
+              <th>Category</th><th>Subcategory</th><th>Avg tokens</th><th>Fertility</th>
+              <th>Compression</th><th>Byte compression</th><th>Fidelity fails</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <details id="evFullWrap" class="hidden">
+        <summary>全部指标（词表层 / 进阶层）</summary>
+        <div class="table-wrap"><table id="evFull"><thead></thead><tbody></tbody></table></div>
+      </details>
+    </div>
+    <div class="card">
+      <div class="card-head"><h2>图表</h2><span class="hint">Chart.js</span></div>
+      <div class="charts">
+        <div class="chart-box"><h3>子分类 Fertility</h3><canvas id="chartFertility"></canvas></div>
+        <div class="chart-box"><h3>语言 Fertility 对比</h3><canvas id="chartLanguage"></canvas></div>
+        <div class="chart-box wide"><h3>Fertility vs Compression（散点）</h3><canvas id="chartScatter"></canvas></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= compare ================= -->
+  <section class="panel" id="panel-compare">
+    <div class="card">
+      <div class="card-head">
+        <h2>2. Compare</h2>
+        <span class="hint">两个 tokenizer 并排对比，Leaderboard + 分组柱状图</span>
+      </div>
+      <div class="row">
+        <select id="cmpA" class="grow"></select>
+        <span class="vs">VS</span>
+        <select id="cmpB" class="grow"></select>
+        <button id="cmpRun" class="primary">对比评测</button>
+        <button id="cmpCsv" class="ghost" disabled>导出 CSV</button>
+        <button id="cmpJson" class="ghost" disabled>导出 JSON</button>
+      </div>
+      <div id="cmpStatus" class="result-box hidden"></div>
+      <div class="table-wrap"><table id="cmpTable"><thead></thead><tbody></tbody></table></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><h2>图表</h2><span class="hint">分组柱状图</span></div>
+      <div class="charts">
+        <div class="chart-box wide"><h3>各子分类 Fertility（A vs B）</h3><canvas id="chartCmpFertility"></canvas></div>
+        <div class="chart-box"><h3>语言 Fertility（A vs B）</h3><canvas id="chartCmpLanguage"></canvas></div>
+        <div class="chart-box"><h3>Fertility vs Compression</h3><canvas id="chartCmpScatter"></canvas></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card muted-card">
+    <h2>语料说明</h2>
+    <p id="corpusInfo" class="muted">加载中…</p>
+  </section>
+</main>
+
+<footer>
+  <span>tok_eval v1.0 · FastAPI + 原生前端 + Chart.js · 启动：<code>python -m uvicorn app.main:app --port 8000</code></span>
+</footer>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,2 @@
+自定义语料样本一：中文分词测试。
+Custom corpus sample two: tokenizer evaluation.

@@ -1,0 +1,8 @@
+# corpus: edge_cases / whitespace_control
+# format: one UTF-8 sample per line, '#' = comment
+
+a    b	c   d
+   leading and trailing spaces   
+tabs	between	every	word
+mixed   	  whitespace		sequence
+（内容由AI生成，仅供参考）

@@ -1,0 +1,8 @@
+# corpus: scientific_formulas / statistics
+# format: one UTF-8 sample per line, '#' = comment
+
+\mu = \frac{1}{N}\sum_{i=1}^{N} x_i, \quad \sigma^2 = \frac{1}{N}\sum_{i=1}^{N}(x_i - \mu)^2
+P(A \mid B) = \frac{P(B \mid A)\,P(A)}{P(B)}
+R^2 = 1 - \frac{SS_{res}}{SS_{tot}}
+z = \frac{\bar{x} - \mu}{\sigma / \sqrt{n}}
+（内容由AI生成，仅供参考）

@@ -1,0 +1,8 @@
+# corpus: programming_languages / python
+# format: one UTF-8 sample per line, '#' = comment
+
+def fibonacci(n): return n if n < 2 else fibonacci(n-1) + fibonacci(n-2)
+import pandas as pd; df = pd.read_csv('data.csv'); print(df.describe())
+result = [x ** 2 for x in range(10) if x % 2 == 0]
+class TokenizerBench: def __init__(self, path): self.path = path
+（内容由AI生成，仅供参考）

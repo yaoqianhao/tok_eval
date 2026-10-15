@@ -1,0 +1,8 @@
+# corpus: edge_cases / mixed_scripts
+# format: one UTF-8 sample per line, '#' = comment
+
+Hello 世界, नमस्ते, مرحبا, こんにちは
+The word 東京 means Tokyo in Japanese.
+Python 代码中的混合文本：def 函数 (함수) 定义。
+Email: user@example.com, 电话: +86-138-0000-0000, café ñoño naïve
+（内容由AI生成，仅供参考）

@@ -1,0 +1,8 @@
+# corpus: programming_languages / javascript
+# format: one UTF-8 sample per line, '#' = comment
+
+const sum = (a, b) => a + b; console.log(sum(2, 3));
+document.querySelectorAll('.card').forEach(el => el.addEventListener('click', handler));
+async function fetchData(url) { const res = await fetch(url); return res.json(); }
+export default function App() { return <div className={'app'}>Hello</div>; }
+（内容由AI生成，仅供参考）

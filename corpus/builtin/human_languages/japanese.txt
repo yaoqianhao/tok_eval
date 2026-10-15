@@ -1,0 +1,8 @@
+# corpus: human_languages / japanese
+# format: one UTF-8 sample per line, '#' = comment
+
+東京は日本の首都であり、世界有数の大都市です。
+トークナイザーの品質は言語モデルの性能に大きく影響します。
+彼は毎朝六時に起きて、近くの公園を走ります。
+この研究では日本語と英語の混在文を評価しました。
+（内容由AI生成，仅供参考）

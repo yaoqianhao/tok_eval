@@ -1,0 +1,8 @@
+# corpus: human_languages / korean
+# format: one UTF-8 sample per line, '#' = comment
+
+서울은 대한민국의 수도이며 인구가 천만 명이 넘습니다.
+토크나이저의 품질은 언어 모델의 성능에 큰 영향을 미칩니다.
+그는 매일 아침 공원에서 삼십 분씩 달립니다.
+이 논문은 한국어와 영어가 섞인 문장을 분석합니다.
+（内容由AI生成，仅供参考）
